@@ -27,6 +27,7 @@ const MovieDetails = () => {
   const { title, release_date, vote_average, genres, overview } = movie;
   const releaseYear = release_date.slice(0, 4);
   const userScore = Math.round(vote_average * 10);
+  const genresList = genres.map(genre => genre.name).join(', ');
 
   return (
     <>
@@ -48,7 +49,7 @@ const MovieDetails = () => {
             <h3>Overview</h3>
             <p>{overview}</p>
             <h4>Genres</h4>
-            <p>{genres.map(genre => genre.name).join(', ')}</p>
+            <p>{genresList}</p>
           </Info>
         </MovieInfo>
 

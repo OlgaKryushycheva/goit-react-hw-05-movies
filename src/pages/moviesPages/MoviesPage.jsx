@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import SearchForm from 'components/searchForm/SearchForm';
 import SearchedMovieList from 'components/moviesList/SearchedMovielist';
 import { fatchMovieByQuery } from 'servises/movie-service';
-import { Page } from './MoviePages.styled';
+import { Page } from './MoviesPage.styled';
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
