@@ -1,13 +1,38 @@
-import { Link, useParams } from 'react-router-dom/dist';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom/dist';
+import { fetchReview } from 'servises/movie-service';
+import { Item, List } from './Reviews.styled';
 
 const Reviews = () => {
   const { movieId } = useParams();
+  const [reviews, setReviews] = useState(null);
 
-  // useEffect(() => {
-  // запрос на бэк по movieId
-  // })
+  useEffect(() => {
+    fetchReview(movieId)
+      .then(data => {
+        setReviews(data.results);
+      })
+      .catch(error => console.log(error));
+  }, [movieId]);
 
-  return <Link to="reviews">Reviews {movieId}</Link>;
+  if (!reviews) return;
+
+  if (reviews.length === 0) {
+    return (
+      <p>We don't have any reviews for this. Would you like to write one?</p>
+    );
+  }
+
+  return (
+    <List>
+      {reviews.map(review => (
+        <Item key={review.id}>
+          <h5>Author: {review.author}</h5>
+          <p>{review.content}</p>
+        </Item>
+      ))}
+    </List>
+  );
 };
 
 export default Reviews;

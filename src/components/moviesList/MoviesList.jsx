@@ -1,30 +1,19 @@
 import { Link, useLocation } from 'react-router-dom/dist';
+import { List } from './MovieListGeneral.styled';
 
-import movies from '../../data.json';
-// const movies = [
-//   { id: '11', name: '1' },
-//   { id: '22', name: '2' },
-//   { id: '33', name: '3' },
-// ];
-
-// const data = ['1', '2', '3', '4'];
-
-const MoviesList = () => {
+const MoviesList = ({ movies }) => {
   const location = useLocation();
-  // console.log(location);
 
   return (
-    <ul>
+    <List>
       {movies.map(movie => (
-        <Link
-          key={movie.id}
-          to={`/movies/${movie.id}`}
-          state={{ from: location }}
-        >
-          <li>{movie.name}</li>
-        </Link>
+        <li key={movie.id}>
+          <Link to={`/movies/${movie.id}`} state={{ from: location }}>
+            {movie.title ?? movie.name}
+          </Link>
+        </li>
       ))}
-    </ul>
+    </List>
   );
 };
 

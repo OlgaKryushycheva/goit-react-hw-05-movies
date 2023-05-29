@@ -1,23 +1,15 @@
-import { NavLink } from 'react-router-dom/dist';
-
-// const StyledLink = styled(NavLink)`
-//   color: #212121;
-
-//   &.active {
-//     color: red;
-//   }
-// `;
+import { HeaderStyle, StyledLink } from './Header.styled';
 
 const Header = () => {
   return (
-    <ul>
+    <HeaderStyle>
       <li>
-        <NavLink to="/">Home </NavLink>
+        <StyledLink to="">Home </StyledLink>
       </li>
       <li>
-        <NavLink to="/movies">Movies</NavLink>
+        <StyledLink to="movies">Movies</StyledLink>
       </li>
-    </ul>
+    </HeaderStyle>
   );
 };
 
