@@ -17,4 +17,3 @@ export const Descr = styled.div`
   justify-content: space-between;
   height: 300px;
 `;
-//

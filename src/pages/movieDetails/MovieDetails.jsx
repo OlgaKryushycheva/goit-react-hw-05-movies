@@ -1,8 +1,8 @@
 import { Suspense, useEffect, useState } from 'react';
 import { Outlet, useParams } from 'react-router-dom/dist';
-import { fetchMovieDetails } from 'servises/movie-service';
 import GoBack from 'components/goBack/GoBack';
 import MovieInfo from 'components/movieInfo/movieInfo';
+import { fetchMovieDetails } from 'servises/movie-service';
 import { MoviePage } from './MovieDetails.styled';
 
 const MovieDetails = () => {

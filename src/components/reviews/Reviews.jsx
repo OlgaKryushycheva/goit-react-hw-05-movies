@@ -5,7 +5,7 @@ import { Item, List } from './Reviews.styled';
 
 // намагалася передати props на Review
 // через MovieDetails, Outlet - не вийшло.
-// Як це зробити
+// Як це зробити?
 
 const Reviews = ({ title }) => {
   const { movieId } = useParams();

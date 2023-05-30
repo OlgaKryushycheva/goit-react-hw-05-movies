@@ -1,4 +1,3 @@
-// import { MovieInfo, MoviePage, Info } from './MovieDetails.styled';
 import { Link } from 'react-router-dom/dist';
 import { MovieStyled, Descr } from './movieInfo.styled';
 
