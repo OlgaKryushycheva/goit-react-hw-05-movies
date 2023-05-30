@@ -3,7 +3,11 @@ import { useParams } from 'react-router-dom/dist';
 import { fetchReview } from 'servises/movie-service';
 import { Item, List } from './Reviews.styled';
 
-const Reviews = () => {
+// намагалася передати props на Review
+// через MovieDetails, Outlet - не вийшло.
+// Як це зробити
+
+const Reviews = ({ title }) => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState(null);
 
@@ -19,7 +23,9 @@ const Reviews = () => {
 
   if (reviews.length === 0) {
     return (
-      <p>We don't have any reviews for this. Would you like to write one?</p>
+      <p>
+        `We don't have any reviews for {title}. Would you like to write one?`
+      </p>
     );
   }
 
