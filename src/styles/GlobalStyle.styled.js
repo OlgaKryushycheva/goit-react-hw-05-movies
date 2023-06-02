@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #212121;
-}
+ }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -30,6 +30,10 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+img {
+   object-fit: cover;
 }
 `;
 

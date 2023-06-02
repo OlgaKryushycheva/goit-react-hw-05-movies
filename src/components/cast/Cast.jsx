@@ -19,6 +19,10 @@ const Cast = () => {
 
   if (!cast) return;
 
+  if (cast.length === 0) {
+    return <p>We don't have information about cast</p>;
+  }
+
   return (
     <List>
       {cast.map(el => (
@@ -27,14 +31,14 @@ const Cast = () => {
             src={
               el.profile_path
                 ? `https://image.tmdb.org/t/p/w500/${el.profile_path}`
-                : new URL('../../images/noPhoto.png', import.meta.url)
+                : new URL('../../images/photo-man.webp', import.meta.url)
             }
             alt="Name"
             width="75px"
             height="100px"
           />
           <p>{el.name}</p>
-          <p>Character: {el.character}</p>
+          <p>Character: {el.character ?? 'unknown'} </p>
         </Item>
       ))}
     </List>

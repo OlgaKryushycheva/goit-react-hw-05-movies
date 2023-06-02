@@ -17,7 +17,11 @@ const MovieInfo = ({
     <>
       <MovieStyled>
         <img
-          src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+              : new URL('../../images/noPoster.jpg', import.meta.url)
+          }
           alt="Poster"
           width="200px"
           height="300px"

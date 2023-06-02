@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SearchForm from 'components/searchForm/SearchForm';
-import SearchedMovieList from 'components/moviesList/SearchedMovielist';
 import { fatchMovieByQuery } from 'servises/movie-service';
 import { Page } from './MoviesPage.styled';
+import MoviesList from 'components/moviesList/MoviesList';
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -23,7 +23,7 @@ const MoviesPage = () => {
   return (
     <Page>
       <SearchForm />
-      {query && <SearchedMovieList movies={movies} />}
+      {movies.length > 0 && <MoviesList movies={movies} />}
     </Page>
   );
 };
